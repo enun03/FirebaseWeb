@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+</head>
+<body>
+  <div class="header"></div>
+
+  <button id="btnLogOut">Sign Out</button>
+
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script src="/src/firebase/config.js"></script>
+  <script>
+    var _user;
+    (function() {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (!user) {
+          // User is signed in.
+          window.location.replace('/index.html');
+        } 
+        else {
+          _user = user;
+          console.log(_user);
+        }
+      });
+    })()
+
+    function signOut(ev) {
+      firebase.auth().signOut()
+        .then(function() {
+        // Sign-out successful.
+        window.location.replace('/index.html');
+      }, function(error) {
+        // An error happened.
+        console.log(error);
+      });
+
+      ev.preventDefault();
+    }
+
+    document.querySelector('#btnLogOut').addEventListener('click', signOut);
+  </script>
+</body>
+</html>

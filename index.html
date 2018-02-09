@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FireBase Auth Sign In</title>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+</head>
+<body>
+  <!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+  <h1>Welcome to My App</h1>
+  <div id="firebaseui-auth-container"></div>
+  <div id="loader">Loading...</div>
+
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+  <script src="/src/firebase/config.js"></script>
+  <script src="/src/firebase/Auth.js"></script>
+  <script>
+    (function() {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          console.log(user);
+          window.location.replace('/dashboard.html');
+        }
+      });
+    })()
+  </script>
+</body>
+</html>
