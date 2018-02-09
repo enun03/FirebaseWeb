@@ -12,16 +12,11 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
   <script src="/src/firebase/config.js"></script>
   <script>
-    var _user;
     (function() {
       firebase.auth().onAuthStateChanged(function(user) {
         if (!user) {
           // User is signed in.
           window.location.replace('/index.html');
-        } 
-        else {
-          _user = user;
-          console.log(_user);
         }
       });
     })()
@@ -41,5 +36,6 @@
 
     document.querySelector('#btnLogOut').addEventListener('click', signOut);
   </script>
+  <script src="/src/components/dashboard/header/main.js"></script>
 </body>
 </html>
