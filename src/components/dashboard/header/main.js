@@ -3,7 +3,6 @@ var Header = {
   render: function () {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        // User is signed in.
         Header.el.innerHTML = `
           <h1>Welcome ${user.displayName}!</h1>
         `;

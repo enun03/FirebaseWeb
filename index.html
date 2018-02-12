@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>FireBase Auth Sign In</title>
+  <!-- Firebase CSS -->
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+  <!-- Custom CSS -->
+  <link href="/src/components/index/style.css" rel="stylesheet">
+  <!-- Font-Aweswome 5 CSS -->
+  <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
   <script>
     window.onload = function() {
       firebase.auth().onAuthStateChanged(function(user) {
@@ -19,9 +24,13 @@
 <body>
   <!-- The surrounding HTML is left untouched by FirebaseUI.
      Your app may use that space for branding, controls and other customizations.-->
-  <h1>Welcome to My App</h1>
-  <div id="firebaseui-auth-container"></div>
-  <div id="loader">Loading...</div>
+  <div class="header">
+      <h2 class='header-title'><i class="fas fa-code"></i> Firebase Web Example</h2>
+  </div>
+  <div class="container">
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>      
+  </div>
 
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
