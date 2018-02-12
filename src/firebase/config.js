@@ -6,7 +6,7 @@
     databaseURL: "https://test-1438e.firebaseio.com",
     projectId: "test-1438e",
     storageBucket: "test-1438e.appspot.com",
-    messagingSenderId: "897367642853"
+    messagingSenderId: "897367642853",
   };
   firebase.initializeApp(config);
 })()

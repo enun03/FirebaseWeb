@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <title>FireBase Auth Sign In</title>
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+  <script>
+    window.onload = function() {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          console.log(user);
+          window.location.replace('/dashboard.html');
+        }
+      });
+    }
+  </script>
 </head>
 <body>
   <!-- The surrounding HTML is left untouched by FirebaseUI.
@@ -16,16 +27,5 @@
   <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
   <script src="/src/firebase/config.js"></script>
   <script src="/src/firebase/Auth.js"></script>
-  <script>
-    (function() {
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-          // User is signed in.
-          console.log(user);
-          window.location.replace('/dashboard.html');
-        }
-      });
-    })()
-  </script>
 </body>
 </html>

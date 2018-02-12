@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard</title>
+  <script>
+    window.onload = function() {
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (!user) {
+          // User is signed in.
+          window.location.replace('/index.html');
+        }
+        else {
+          console.log(user);
+        }
+      });
+    }
+  </script>
 </head>
 <body>
   <div class="header"></div>
@@ -11,31 +24,7 @@
 
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
   <script src="/src/firebase/config.js"></script>
-  <script>
-    (function() {
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (!user) {
-          // User is signed in.
-          window.location.replace('/index.html');
-        }
-      });
-    })()
-
-    function signOut(ev) {
-      firebase.auth().signOut()
-        .then(function() {
-        // Sign-out successful.
-        window.location.replace('/index.html');
-      }, function(error) {
-        // An error happened.
-        console.log(error);
-      });
-
-      ev.preventDefault();
-    }
-
-    document.querySelector('#btnLogOut').addEventListener('click', signOut);
-  </script>
   <script src="/src/components/dashboard/header/main.js"></script>
+  <script src="/src/components/dashboard/main.js"></script>  
 </body>
 </html>
