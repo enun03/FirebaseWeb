@@ -3,6 +3,3 @@ body {
     background-size: 100%; 
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
 }
-#firebaseui-auth-container {
-    margin-top: 3em;
-}

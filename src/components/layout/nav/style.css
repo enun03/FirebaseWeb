@@ -1,0 +1,15 @@
+.nav {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid #e6e6e6;
+    margin-top: -1.4em;
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+    padding: 15px 10px 0px;
+    box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+}
+.nav-title {
+    color: #888;
+}
+.fa-code {
+    color:  #efa926;
+}

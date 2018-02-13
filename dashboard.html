@@ -3,28 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Dashboard</title>
-  <script>
-    window.onload = function() {
-      firebase.auth().onAuthStateChanged(function(user) {
-        if (!user) {
-          // User is signed in.
-          window.location.replace('/');
-        }
-        else {
-          console.log(user);
-        }
-      });
-    }
-  </script>
+  <!-- Custom CSS -->
+  <link href="/src/components/dashboard/style.css" rel="stylesheet" />
+  <!-- Font-Aweswome 5 CSS -->
+  <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet" />
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
 </head>
 <body>
+  <div class="nav"></div>
   <div class="header"></div>
 
   <button id="btnLogOut">Sign Out</button>
 
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
-  <script src="/src/firebase/config.js"></script>
-  <script src="/src/components/dashboard/header/main.js"></script>
-  <script src="/src/components/dashboard/main.js"></script>  
+  <script src="/src/components/dashboard/scripts.js"></script>
 </body>
 </html>
