@@ -1,5 +1,6 @@
 (function() {
   addScript('/src/firebase/config.js');
+  addScript('/src/firebase/firestore.js');  
   addScript('/src/components/dashboard/main.js');  
   addScript('/src/components/layout/nav/main.js');    
   addScript('/src/components/dashboard/header/main.js');  
