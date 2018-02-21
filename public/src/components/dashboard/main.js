@@ -23,4 +23,5 @@ function signOut(ev) {
     ev.preventDefault();
 }
 
-document.querySelector('#btnLogOut').addEventListener('click', signOut);
+// Event listeners
+document.querySelector('#btnGetDocs').addEventListener('click', getAllDocuments);

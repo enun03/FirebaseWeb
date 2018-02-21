@@ -1,6 +1,7 @@
 body {
     background: url(https://firebase.google.com/images/backslant-home-top.svg);
     background-size: 100%; 
+    background-repeat: no-repeat;
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
 }
 #firebaseui-auth-container {
